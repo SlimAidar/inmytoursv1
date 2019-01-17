@@ -1,4 +1,4 @@
 db.sqlite3
 *.pyc
 env
-settings/local.py
+src/settings/local.py
