@@ -39,7 +39,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pages',
+    'users'
 ]
+
+# Auth
+AUTH_USER_MODEL = 'users.CUser'
+
+LOGIN_REDIRECT_URL = 'home'
+
+LOGOUT_REDIRECT_URL = 'home'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
