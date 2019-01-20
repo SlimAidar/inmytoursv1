@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    In My Tours
+{% endblock title %}
+
+{% block content %}
+     <!-- start destinations -->
+    <section class="destinations">
+      <article class="destination">
+        <a href="#">
+          <img src="{% static  'img/destinations/dubai.jpeg' %}" alt="">
+          <p><b>Dubai</b></p>
+        </a>
+      </article>
+      <article class="destination">
+        <img src="{% static 'img/destinations/new-york.jpg' %}" alt="">
+        <p><b>New york</b></p>
+      </article>
+      <article class="destination">
+        <img src="{% static 'img/destinations/japan.jpeg' %}" alt="">
+        <p><b>Japan</b></p>
+      </article>
+      <article class="destination">
+        <img src="{% static 'img/destinations/paris.jpg' %}" alt="">
+        <p><b>Paris</b></p>
+      </article>
+      <article class="destination">
+          <a href="#">
+            <img src="{% static 'img/destinations/dubai.jpeg' %}" alt="">
+            <p><b>Dubai</b></p>
+          </a>
+        </article>
+        <article class="destination">
+          <img src="{% static 'img/destinations/new-york.jpg' %}" alt="">
+          <p><b>New york</b></p>
+        </article>
+        <article class="destination">
+          <img src="{% static 'img/destinations/japan.jpeg' %}" alt="">
+          <p><b>Japan</b></p>
+        </article>
+        <article class="destination">
+          <img src="{% static 'img/destinations/paris.jpg' %}" alt="">
+          <p><b>Paris</b></p>
+        </article>
+    </section>
+  <!-- end destinations -->
+
+  <!-- start Feautured tours -->
+  <section class="feautured">
+    <h4>Feautured tours</h4>
+    <div class="tours">
+      <article class="tour">
+        <img src="{% static 'img/tours/madrid.jpg' %}" alt="">
+        <h5><b>Madrid city tour</b></h5>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+        <div class="more_info">
+            <div class="stars">
+                <i class="material-icons">star_rate</i>
+                <i class="material-icons">star_rate</i>
+                <i class="material-icons">star_rate</i>
+                <i class="material-icons">star_rate</i>
+            </div>
+            <span class="price">$45</span>
+        </div>
+      </article>
+      <article class="tour">
+          <img src="{% static 'img/tours/madrid.jpg' %}" alt="">
+          <h5><b>Madrid city tour</b></h5>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+          <div class="more_info">
+              <div class="stars">
+                  <i class="material-icons">star_rate</i>
+                  <i class="material-icons">star_rate</i>
+                  <i class="material-icons">star_rate</i>
+                  <i class="material-icons">star_rate</i>
+              </div>
+              <span class="price">$45</span>
+          </div>
+      </article>
+      <article class="tour">
+          <img src="{% static 'img/tours/madrid.jpg' %}" alt="">
+          <h5><b>Madrid city tour</b></h5>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+          <div class="more_info">
+              <div class="stars">
+                  <i class="material-icons">star_rate</i>
+                  <i class="material-icons">star_rate</i>
+                  <i class="material-icons">star_rate</i>
+                  <i class="material-icons">star_rate</i>
+              </div>
+              <span class="price">$45</span>
+          </div>
+      </article>
+    </div>
+  </section>
+  <!-- end Feautured tours -->
+
+  <!-- start support box -->
+  <section class="support">
+    <article class="support-box row">
+      <span>24/7 support</span>
+      <img src="{% static 'img/support-man.png' %}" alt="">
+      <span>Our customer service team is available 24/7 via email, phone and WhatsApp.</span>
+      <img src="{% static 'img/support-woman.png' %}" alt="">
+    </article>
+  </section>
+  <!-- end support box -->
+{% endblock content %}
