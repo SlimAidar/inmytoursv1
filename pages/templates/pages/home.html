@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% load extra_tags %}
 
 {% block title %}
     In My Tours
@@ -9,42 +10,16 @@
 {% block content %}
      <!-- start destinations -->
     <section class="destinations">
-      <article class="destination">
-        <a href="#">
-          <img src="{% static  'img/destinations/dubai.jpeg' %}" alt="">
-          <p><b>Dubai</b></p>
-        </a>
-      </article>
-      <article class="destination">
-        <img src="{% static 'img/destinations/new-york.jpg' %}" alt="">
-        <p><b>New york</b></p>
-      </article>
-      <article class="destination">
-        <img src="{% static 'img/destinations/japan.jpeg' %}" alt="">
-        <p><b>Japan</b></p>
-      </article>
-      <article class="destination">
-        <img src="{% static 'img/destinations/paris.jpg' %}" alt="">
-        <p><b>Paris</b></p>
-      </article>
-      <article class="destination">
+      
+      {% for destination in destinations %}
+        <article class="destination">
           <a href="#">
-            <img src="{% static 'img/destinations/dubai.jpeg' %}" alt="">
-            <p><b>Dubai</b></p>
+            <img src="{{destination.image.url}}" alt="{{ destination.name }}">
+            <p><b>{{destination.name}}</b></p>
           </a>
         </article>
-        <article class="destination">
-          <img src="{% static 'img/destinations/new-york.jpg' %}" alt="">
-          <p><b>New york</b></p>
-        </article>
-        <article class="destination">
-          <img src="{% static 'img/destinations/japan.jpeg' %}" alt="">
-          <p><b>Japan</b></p>
-        </article>
-        <article class="destination">
-          <img src="{% static 'img/destinations/paris.jpg' %}" alt="">
-          <p><b>Paris</b></p>
-        </article>
+      {% endfor %}
+
     </section>
   <!-- end destinations -->
 
@@ -52,48 +27,21 @@
   <section class="feautured">
     <h4>Feautured tours</h4>
     <div class="tours">
+      {% for tour in tours %}
       <article class="tour">
         <img src="{% static 'img/tours/madrid.jpg' %}" alt="">
-        <h5><b>Madrid city tour</b></h5>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+        <h5><b>{{ tour.title }}</b></h5>
+        <p>{{ tour.descreption | truncatewords:15 }}</p>
         <div class="more_info">
             <div class="stars">
+              {% for star in x|times:tour.tour.stars %}
                 <i class="material-icons">star_rate</i>
-                <i class="material-icons">star_rate</i>
-                <i class="material-icons">star_rate</i>
-                <i class="material-icons">star_rate</i>
+              {% endfor %}
             </div>
             <span class="price">$45</span>
         </div>
       </article>
-      <article class="tour">
-          <img src="{% static 'img/tours/madrid.jpg' %}" alt="">
-          <h5><b>Madrid city tour</b></h5>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
-          <div class="more_info">
-              <div class="stars">
-                  <i class="material-icons">star_rate</i>
-                  <i class="material-icons">star_rate</i>
-                  <i class="material-icons">star_rate</i>
-                  <i class="material-icons">star_rate</i>
-              </div>
-              <span class="price">$45</span>
-          </div>
-      </article>
-      <article class="tour">
-          <img src="{% static 'img/tours/madrid.jpg' %}" alt="">
-          <h5><b>Madrid city tour</b></h5>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
-          <div class="more_info">
-              <div class="stars">
-                  <i class="material-icons">star_rate</i>
-                  <i class="material-icons">star_rate</i>
-                  <i class="material-icons">star_rate</i>
-                  <i class="material-icons">star_rate</i>
-              </div>
-              <span class="price">$45</span>
-          </div>
-      </article>
+      {% endfor %}
     </div>
   </section>
   <!-- end Feautured tours -->
