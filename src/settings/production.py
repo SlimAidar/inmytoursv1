@@ -136,4 +136,4 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") #where files get collected
+STATIC_ROOT = '/home/slimaidar/inmytours/staticfiles' #where files get collected
