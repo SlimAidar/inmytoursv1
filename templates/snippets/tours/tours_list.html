@@ -1,0 +1,25 @@
+{% load static %}
+{% load extra_tags %}
+
+
+<div class="tours">
+    {% for tour in tours %}
+    <article class="tour">
+    <img src="{% static 'img/tours/madrid.jpg' %}" alt="">
+    <h5>
+        <a href="#">{{ tour.title }}</a>
+    </h5>
+    <p>
+        <a href="#">{{ tour.descreption | truncatewords:15 }}</a>
+    </p>
+    <div class="more_info">
+        <div class="stars">
+            {% for star in x|times:tour.tour.stars %}
+            <i class="material-icons">star_rate</i>
+            {% endfor %}
+        </div>
+        <span class="price">${{tour.tour.price}}</span>
+    </div>
+    </article>
+    {% endfor %}
+</div>

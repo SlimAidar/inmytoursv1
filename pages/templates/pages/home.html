@@ -13,7 +13,7 @@
       
       {% for destination in destinations %}
         <article class="destination">
-          <a href="#">
+          <a href="{% url 'tour_list' %}?destination={{destination.name}}">
             <img src="{{destination.image.url}}" alt="{{ destination.name }}">
             <p><b>{{destination.name}}</b></p>
           </a>
@@ -26,23 +26,7 @@
   <!-- start Feautured tours -->
   <section class="feautured">
     <h4>Feautured tours</h4>
-    <div class="tours">
-      {% for tour in tours %}
-      <article class="tour">
-        <img src="{% static 'img/tours/madrid.jpg' %}" alt="">
-        <h5><b>{{ tour.title }}</b></h5>
-        <p>{{ tour.descreption | truncatewords:15 }}</p>
-        <div class="more_info">
-            <div class="stars">
-              {% for star in x|times:tour.tour.stars %}
-                <i class="material-icons">star_rate</i>
-              {% endfor %}
-            </div>
-            <span class="price">$45</span>
-        </div>
-      </article>
-      {% endfor %}
-    </div>
+    {% include 'snippets/tours/tours_list.html' with tours=tours %}
   </section>
   <!-- end Feautured tours -->
 

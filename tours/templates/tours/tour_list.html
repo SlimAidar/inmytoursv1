@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Book Tours online
+{% endblock title %}
+
+{% block content %}
+    <section class="tours_list">
+        {% include 'snippets/tours/tours_list.html' with tours=object_list %}
+    </section>
+{% endblock content %}
