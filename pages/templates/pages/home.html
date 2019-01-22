@@ -8,19 +8,34 @@
 {% endblock title %}
 
 {% block content %}
-     <!-- start destinations -->
-    <section class="destinations">
-      
-      {% for destination in destinations %}
-        <article class="destination">
-          <a href="{% url 'tour_list' %}?destination={{destination.name}}">
-            <img src="{{destination.image.url}}" alt="{{ destination.name }}">
-            <p><b>{{destination.name}}</b></p>
-          </a>
-        </article>
-      {% endfor %}
 
-    </section>
+<!-- start header -->
+  <header>
+    <div class="overlay"></div>
+    <div class="text">
+        <h1>In My Tours</h1>
+        <h3>Discover a new World</h3>
+    </div>
+    <form action="">
+      <input type="text" placeholder=" Search for a tour..."/>
+    </form>
+  </header>
+<!-- end header -->
+
+<div class="container">
+  <!-- start destinations -->
+  <section class="destinations">
+    
+    {% for destination in destinations %}
+      <article class="destination">
+        <a href="{% url 'tour_list' %}?destination={{destination.name}}">
+          <img src="{{destination.image.url}}" alt="{{ destination.name }}">
+          <p><b>{{destination.name}}</b></p>
+        </a>
+      </article>
+    {% endfor %}
+
+  </section>
   <!-- end destinations -->
 
   <!-- start Feautured tours -->
@@ -40,4 +55,6 @@
     </article>
   </section>
   <!-- end support box -->
+</div>
+
 {% endblock content %}

@@ -5,7 +5,26 @@ Book Tours online
 {% endblock title %}
 
 {% block content %}
+<!-- start header -->
+  <header class="sub">
+    <div class="overlay"></div>
+    <div class="text">
+        <h1>
+            {% if destination %}
+                {{destination}}
+            {% else %}
+                All tours
+            {% endif %}
+        </h1>
+    </div>
+  </header>
+<!-- end header -->
+<div class="container">
+
     <section class="tours_list">
         {% include 'snippets/tours/tours_list.html' with tours=object_list %}
     </section>
+
+</div>
+
 {% endblock content %}

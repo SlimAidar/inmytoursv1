@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    {{tour.title}}
+{% endblock title %}
+
+{% block additional_css %}
+<link rel="stylesheet" href="{% static 'css/slider.css' %}">
+{% endblock additional_css %}
+
+{% block content %}
+    <div class="container">
+        <h4>{{tour.title}}</h4>
+
+        <section class="description">
+            <h5 class="title">Description</h5>
+            <div class="text">
+                {{tour.descreption}}
+            </div>
+        </section>
+
+        <section class="description">
+            <h5 class="title">Book</h5>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="inputs">
+                    <input type="text" name="first_name" placeholder="first name">
+                    <input type="text" name="last_name" placeholder="last name">
+                    <input type="text" name="email" placeholder="email">
+                    <input type="text" name="phone" placeholder="phone">
+                </div>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                </button>
+            </form>
+        </section>
+    </div>
+{% endblock content %}

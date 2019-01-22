@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 SECRET_KEY = '-y$!6m2x1mm0+5agae&63(fwv+l_t^va9*x(s^h@zhi$=0m!$@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pages',
     'users',
-    'tours'
+    'tours',
+    'django_summernote',
 ]
 
 # Auth

@@ -23,6 +23,7 @@ class Tour(models.Model):
 
 class TourDetail(models.Model):
     title = models.CharField(max_length=50, unique=True)
+    slug = models.CharField(max_length=50, unique=True)
     descreption = models.TextField()
     tour = models.ForeignKey(Tour, on_delete=models.CASCADE)
 

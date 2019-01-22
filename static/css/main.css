@@ -6,7 +6,7 @@
 body {
     font-family: 'Roboto', sans-serif !important;
     font-size: 16px;
-    background-color: #D7F3F3;
+    background-color: #DBF6F8;
 }
 a {
     color: black;
@@ -19,14 +19,11 @@ a {
 .title {
     margin: 5% 0;
 }
-.container-fluid {
-    
-}
 /* end global */
 
 /* start nav */
 nav .nav-wrapper {
-    background-color: #109091;
+    background-color: #638CF6;
     padding-left: 1%;
     margin: 0;
 }
@@ -54,6 +51,14 @@ header {
     background-attachment: fixed;
     background-size: contain;
     background-position: top;
+}
+
+header.sub {
+    padding: 0;
+    height: 20vh !important;
+    align-items: center;
+    background-size: cover;
+    background-position: bottom !important;
 }
 
 header .text {
@@ -163,7 +168,7 @@ header form input {
 
 /* start support box */
 .support .support-box {
-    background: #249596;
+    background: #638CF6;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 5px;
     color: #fff;
@@ -192,7 +197,7 @@ footer{
     height: 278px;
 }
 .copy-right{
-    background: #249596;
+    background: #638CF6;
     text-align: center;
     color: #FFFFFF;
 }

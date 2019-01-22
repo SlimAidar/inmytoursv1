@@ -1,6 +1,7 @@
 db.sqlite3
 *.pyc
 env
+env2
 src/settings/local.py
 .vscode
 mediafiles
