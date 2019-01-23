@@ -24,3 +24,7 @@ section.description .title {
     grid-gap: 1%;
     padding: 0 10vw
 }
+
+.toast {
+    background: #09A598 !important;
+}

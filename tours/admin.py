@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Destination, Gallery, Tour, TourDetail
+from .models import Destination, Gallery, Tour, TourDetail, Book
 from django_summernote.admin import SummernoteModelAdmin
 
 class TourDetailModelAdmin(SummernoteModelAdmin):  # instead of ModelAdmin
@@ -9,4 +9,5 @@ class TourDetailModelAdmin(SummernoteModelAdmin):  # instead of ModelAdmin
 admin.site.register(Destination)
 admin.site.register(Gallery)
 admin.site.register(Tour)
+admin.site.register(Book)
 admin.site.register(TourDetail, TourDetailModelAdmin)

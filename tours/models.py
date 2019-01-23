@@ -45,3 +45,13 @@ class Gallery(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Book(models.Model):
+    tour = models.ForeignKey("tours.Tour", on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=254)
+    phone = models.CharField(max_length=50)
+    message = models.CharField(max_length=500, blank=True, null=True)
+    date_book = models.DateTimeField(auto_now_add=True)

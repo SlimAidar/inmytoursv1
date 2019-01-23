@@ -25,10 +25,7 @@
             <form action="" method="POST">
                 {% csrf_token %}
                 <div class="inputs">
-                    <input type="text" name="first_name" placeholder="first name">
-                    <input type="text" name="last_name" placeholder="last name">
-                    <input type="text" name="email" placeholder="email">
-                    <input type="text" name="phone" placeholder="phone">
+                    {{form}}
                 </div>
                 <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                         <i class="material-icons right">send</i>
@@ -37,3 +34,11 @@
         </section>
     </div>
 {% endblock content %}
+
+{% block additional_js %}
+    {% if sent %}
+        <script>
+            M.toast({html: 'Email has been sent', classes: 'alert-sent'})
+        </script>
+    {% endif %}
+{% endblock %}
