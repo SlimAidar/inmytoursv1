@@ -28,3 +28,24 @@ section.description .title {
 .toast {
     background: #09A598 !important;
 }
+.w3-content {
+    position: relative;
+}
+
+.display-left, .display-right {
+    position: absolute;
+    top: 40%;
+    padding: 1%;
+    background: rgb(34, 33, 33);
+    border: none;
+    color: #ffffff;
+}
+.display-left:hover, .display-right:hover {
+    cursor: pointer;
+}
+.display-left {
+    left: 0;
+}
+.display-right {
+    right: 0;
+}

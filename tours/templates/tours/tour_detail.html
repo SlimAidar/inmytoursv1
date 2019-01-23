@@ -11,11 +11,24 @@
  
 {% block content %}
     <div class="container">
-        <h4>{{tour.title}}</h4>
+        
+        <section class="description">
+            <h5 class="title">Gallery</h5>
+            <div class="text">
+                <div class="w3-content w3-display-container">
+                    {% for item in gallery %}
+                        <img class="mySlides" src="{{ item.image.url }}" style="width:100%; height:40vh !important" alt="tours and travels">
+                    {% endfor %}
+                    <button class="display-left" onclick="plusDivs(-1)">&#10094;</button>
+                    <button class="display-right" onclick="plusDivs(1)">&#10095;</button>
+                </div>
+            </div>
+        </section>
 
         <section class="description">
             <h5 class="title">Description</h5>
             <div class="text">
+                <h4>{{tour.title}}</h4>
                 {{tour.descreption | safe}}
             </div>
         </section>
@@ -32,6 +45,18 @@
                 </button>
             </form>
         </section>
+
+        <!-- start support box -->
+        <section class="support" style="padding:0">
+            <article class="support-box row">
+            <span>24/7 support</span>
+            <img src="{% static 'img/support-man.png' %}" alt="">
+            <span>Our customer service team is available 24/7 via email, phone and WhatsApp.</span>
+            <img src="{% static 'img/support-woman.png' %}" alt="">
+            </article>
+        </section>
+        <!-- end support box -->
+
     </div>
 {% endblock content %}
 
@@ -41,4 +66,23 @@
             M.toast({html: 'Email has been sent', classes: 'alert-sent'})
         </script>
     {% endif %}
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+        showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            x[slideIndex-1].style.display = "block";  
+        }
+    </script>
 {% endblock %}
