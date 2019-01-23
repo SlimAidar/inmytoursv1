@@ -10,7 +10,7 @@
         <a href="{% url 'tour_detail' tour.slug %}">{{ tour.title }}</a>
     </h5>
     <p>
-        <a href="{% url 'tour_detail' tour.slug %}">{{ tour.descreption | truncatewords:15 }}</a>
+        <a href="{% url 'tour_detail' tour.slug %}">{{ tour.descreption | truncatewords:15 | safe }}</a>
     </p>
     <div class="more_info">
         <div class="stars">
