@@ -41,11 +41,11 @@ class TourDetailView(DetailView):
             tour_detail = self.get_object()
             booking = Book(
                 tour = tour_detail.tour,
-                first_name = request.POST['first_name'],
-                last_name = request.POST['last_name'],
-                email = request.POST['email'],
-                phone = request.POST['phone'],
-                message = request.POST.get('message'),
+                first_name = form.data['first_name'],
+                last_name = form.data['last_name'],
+                email = form.data['email'],
+                phone = form.data['phone'],
+                message = form.data['message'],
             )
             booking.save()
             send_mail(

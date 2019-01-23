@@ -1,17 +1,42 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}
-Contact inMyTours
+    Contact us - IMT
 {% endblock title %}
+
+{% block additional_css %}
+        <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+{% endblock additional_css %}
 
 {% block content %}
 
-<div class="container" style="background:#fff; padding: 1%; margin-top: 60px; margin-bottom: 60px">
-    <h4>Contact us</h4>
-    
-        
+<div class="container" style="margin-top: 60px; margin-bottom: 60px">
+
+        <section class="description">
+                <h5 class="title">Contact us</h5>
+                <div class="text">
+
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        {{form}}
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                                <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+
+                </div>
+        </section>
+
 </div>
 
-
-
 {% endblock content %}
+
+{% block additional_js %}
+    {% if sent %}
+        <script>
+            M.toast({html: 'Email has been sent', classes: 'alert-sent'})
+        </script>
+    {% endif %}
+{% endblock %}

@@ -194,11 +194,11 @@ header form input {
 /* start footer */
 footer{
     background-color: #FFFFFF;
-    height: 278px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     text-align: center;
     align-items: center;
+    margin-top: 60px;
 }
 .copy-right{
     background: #638CF6;

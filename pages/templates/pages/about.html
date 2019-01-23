@@ -1,15 +1,54 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}
-About inMyTours
+    About in my tours
 {% endblock title %}
+
+{% block additional_css %}
+        <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+{% endblock additional_css %}
 
 {% block content %}
 
-<div class="container" style="background:#fff; padding: 1%; margin-top: 60px; margin-bottom: 60px">
-    <h4>About InMyTours</h4>
-    
-        
+<div class="container" style="margin-top: 60px; margin-bottom: 60px">
+
+        <section class="description">
+                <h5 class="title">About IMT</h5>
+                <div class="text">
+
+                    <p>
+                        Whether you know exactly where you want to go, or you are looking for some ideas, InMyTours has many tours and activities in Spain, Morocco, Mexico, UAE and USA waiting for you to discover. With new destinations continually added, InMyTours will change your life one visit at a time, in fact, by simply living our tours.
+                    </p>
+
+                    <h5>Lowest Prices Guaranteed</h5>
+
+                    <p>
+                        We guarantee the lowest retail published pricing. Our expert team constantly monitors discount and specials offered by the activity providers, so you will always be getting the best prices. 
+                    </p>
+
+                    <h5>InMyTours Points</h5>
+
+                    <p>
+                        You will earn InMyTours Points with every booking you make, and they can be spent on any future bookings. You can also earn points when you post reviews on our website and offer bonus points if you include some tour photos as well! 
+                    </p>
+
+                    <h5>Top Quality Activities</h5>
+
+                    <p>
+                        Check out our Special Deals and Review Rebates! We negotiate exclusive specials with our activity partners so we can offer you incredible discounts and deals. 
+                    </p>
+
+                    <h5>Customer Reviews</h5>
+
+                    <p>
+                        Over 200 000 people have travelled with InMyTours and many of them have shared their experiences with us. All of the posted reviews were written by members of our community and many include photos as well! Take a peek and see what others have had to say. 
+                    </p>
+
+                </div>
+        </section>
+
 </div>
 
 
