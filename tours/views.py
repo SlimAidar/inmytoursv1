@@ -3,6 +3,7 @@ from django.views.generic import ListView, DetailView
 from .models import Tour, TourDetail, Gallery, Book
 from .forms import BookForm
 from django.core.mail import send_mail
+from django.conf import settings
 
 
 class TourListView(ListView):
@@ -57,7 +58,7 @@ class TourDetailView(DetailView):
                     booking.message,
                 ),
                 booking.email,
-                ['slimaidarismail@gmail.com'],
+                [settings.EMAIL_HOST_USER],
                 fail_silently=False,
             )
             self.object = self.get_object()
