@@ -26,6 +26,7 @@ class TourDetail(models.Model):
     slug = models.CharField(max_length=50, unique=True)
     descreption = models.TextField()
     tour = models.ForeignKey(Tour, on_delete=models.CASCADE)
+    summary = models.CharField(max_length=100)
 
     def __str__(self):
         return self.title
